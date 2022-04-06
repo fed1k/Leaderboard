@@ -1,28 +1,28 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 section {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .recent-scores-div {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .submit {
-    padding: 3px 8px;
-    width: 80px;
-    align-self: flex-end;
-    border: 2px solid black;
-    font-weight: bold;
+  padding: 3px 8px;
+  width: 80px;
+  align-self: flex-end;
+  border: 2px solid black;
+  font-weight: bold;
 }
