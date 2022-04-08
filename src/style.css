@@ -42,7 +42,7 @@ form {
 .reset {
   padding: 3px 15px;
   border: none;
-  background-color: #009EF2;
+  background-color: #009ef2;
 }
 
 .h {
@@ -76,7 +76,7 @@ form {
 
 .listText {
   padding: 10px;
-  border: 1px solid inherit;
+  border: 1px solid transparent;
   border-radius: 12px;
   box-shadow: -1px 13px 35px -3px rgba(34, 60, 80, 0.28);
   font-size: 18px;
@@ -90,7 +90,7 @@ form {
   background-color: rgba(32, 33, 36, 5%);
 }
 
-@media (max-width: 600px){
+@media (max-width: 600px) {
   section {
     flex-direction: column-reverse;
     gap: 25px;
