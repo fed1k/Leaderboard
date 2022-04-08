@@ -1,4 +1,4 @@
-import { nameClass, scoreClass, array} from "./index.js";
+import { nameClass, scoreClass, array } from "./index.js";
 
 class List {
   constructor(name, score) {
@@ -14,12 +14,24 @@ const addListToPage = () => {
     array.push(list);
     nameClass.value = null;
     scoreClass.value = null;
-    fetch('')
+    func();
   }
 };
 
-// const p = document.createElement('p');
-// p.textContent = `${list.name}: ${list.score}`;
-// listBoard.appendChild(p);
+const func = async()=>{
+  const response = await fetch(
+    "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/lkZvzTSRH77IZXCC4fo9/scores/",
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        user: array[0].name,
+        score: array[0].score
+      }),
+      headers: { 'Content-type': 'application/json; charset=UTF-8'}
+    }
+  )
+  const haha = await response.json();
+  console.log(haha);
+}
 
 export { listBoard, addListToPage };
