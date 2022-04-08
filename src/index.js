@@ -14,7 +14,7 @@ scoreClass.addEventListener('keypress', (e)=>{
     if(e.key === 'Enter' && scoreClass.value) addListToPage();
 })
 
-const myFunction = async()=>{
+const getDataFromApi = async()=>{
     const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/lkZvzTSRH77IZXCC4fo9/scores/')
     const raha =  await response.json();
     for(let i of raha.result){
@@ -24,11 +24,11 @@ const myFunction = async()=>{
         
     }
 }
-// let count = 0;
+
 reset.addEventListener('click', ()=>{
     location.reload();
-    myFunction()
+    getDataFromApi()
 });
-window.onload = myFunction();
+window.onload = getDataFromApi();
 
 export { nameClass, scoreClass, array}

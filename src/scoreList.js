@@ -14,12 +14,12 @@ const addListToPage = () => {
     array.push(list);
     nameClass.value = null;
     scoreClass.value = null;
-    func();
+    sendDataToApi();
   }
 };
 
-const func = async()=>{
-  const response = await fetch(
+const sendDataToApi = async()=>{
+  await fetch(
     "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/lkZvzTSRH77IZXCC4fo9/scores/",
     {
       method: 'POST',
@@ -30,8 +30,6 @@ const func = async()=>{
       headers: { 'Content-type': 'application/json; charset=UTF-8'}
     }
   )
-  const haha = await response.json();
-  console.log(haha);
 }
 
 export { listBoard, addListToPage };
