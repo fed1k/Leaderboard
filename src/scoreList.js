@@ -8,6 +8,7 @@ class List {
 }
 
 const listBoard = document.createElement("div");
+listBoard.className = 'list-container';
 const addListToPage = () => {
   if (nameClass.value && scoreClass.value) {
     const list = new List(nameClass.value, scoreClass.value);
@@ -29,6 +30,8 @@ const sendDataToApi = async()=>{
       }),
       headers: { 'Content-type': 'application/json; charset=UTF-8'}
     }
+    .then(response => response.json())
+    .then(json => console.log(json))
   )
 }
 
