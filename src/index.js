@@ -7,6 +7,7 @@ const nameClass = document.querySelector('.name-class')
 const scoreClass = document.querySelector('.score-class')
 const reset = document.querySelector('.reset')
 const submit = document.querySelector('.submit')
+const scrollUp = document.querySelector('.scrollUp')
 section.appendChild(listBoard);
 
 submit.addEventListener('click', addListToPage)
@@ -19,6 +20,7 @@ const getDataFromApi = async()=>{
     const raha =  await response.json();
     for(let i of raha.result){
         const p = document.createElement('p');
+        p.className = 'listText';
         p.textContent = `${i.user}: ${i.score}`;
         listBoard.appendChild(p);
         
@@ -30,5 +32,11 @@ reset.addEventListener('click', ()=>{
     getDataFromApi()
 });
 window.onload = getDataFromApi();
+
+scrollUp.addEventListener('click', ()=>{
+    window.scrollTo(0, 0);
+})
+
+
 
 export { nameClass, scoreClass, array}

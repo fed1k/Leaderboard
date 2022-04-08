@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
   margin: 0;
   padding: 0;
+  font-family: Poppins, serif;
+  scroll-behavior: smooth;
 }
 
 section {
@@ -10,7 +14,9 @@ section {
 
 .recent-scores-div {
   display: flex;
-  gap: 15px;
+  gap: 55px;
+  margin-bottom: 20px;
+  justify-content: space-around;
 }
 
 form {
@@ -19,10 +25,89 @@ form {
   gap: 20px;
 }
 
+.name-class,
+.score-class {
+  padding: 5px 10px;
+}
+
 .submit {
   padding: 3px 8px;
   width: 80px;
   align-self: flex-end;
   border: 2px solid black;
   font-weight: bold;
+  opacity: 0.5;
+}
+
+.reset {
+  padding: 3px 15px;
+  border: none;
+  background-color: #009EF2;
+}
+
+.h {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.scrollUp {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  border: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: all ease-in-out 1s;
+}
+
+.scrollUp:hover {
+  cursor: pointer;
+}
+
+.reset:hover {
+  cursor: pointer;
+}
+
+.submit:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.listText {
+  padding: 10px;
+  border: 1px solid inherit;
+  border-radius: 12px;
+  box-shadow: -1px 13px 35px -3px rgba(34, 60, 80, 0.28);
+  font-size: 18px;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 18px 30px;
+  background-color: rgba(32, 33, 36, 5%);
+}
+
+@media (max-width: 600px){
+  section {
+    flex-direction: column-reverse;
+    gap: 25px;
+  }
+
+  .name-class,
+  .score-class,
+  .submit {
+    width: 30%;
+    align-self: center;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .h {
+    text-align: center;
+  }
 }
